@@ -1,0 +1,644 @@
+/*==================================================
+RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:#1c1c1c;
+    font-family:"Inter",sans-serif;
+}
+
+body.no-scroll{
+    overflow:hidden;
+}
+
+/*==================================================
+IPHONE FRAME
+==================================================*/
+
+.iphone{
+    width:393px;
+    height:852px;
+    background:#000;
+    border-radius:58px;
+    padding:10px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:
+        0 0 0 2px #444,
+        0 35px 90px rgba(0,0,0,.55);
+}
+
+.iphone::before{
+    content:"";
+    position:absolute;
+    top:12px;
+    left:50%;
+    transform:translateX(-50%);
+    width:126px;
+    height:34px;
+    background:#000;
+    border-radius:40px;
+    z-index:1000;
+}
+
+/*==================================================
+SCREEN
+==================================================*/
+
+.screen{
+    width:100%;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+    border-radius:48px;
+    background:#f3f3f3;
+}
+
+/*==================================================
+STATUS BAR
+==================================================*/
+
+.status-bar{
+    position:absolute;
+    top:18px;
+    left:22px;
+    right:22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    z-index:100;
+}
+
+.status-icons{
+    display:flex;
+    gap:8px;
+}
+
+/*==================================================
+HERO
+==================================================*/
+
+.hero{
+    position:relative;
+    width:100%;
+    height:270px;
+    overflow:hidden;
+}
+
+.hero-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scale(1.08);
+    filter:blur(5px);
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+}
+
+/*==================================================
+TOP BAR
+==================================================*/
+
+.topbar{
+    position:absolute;
+    top:48px;
+    left:18px;
+    right:18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:200;
+}
+
+.nav-btn,
+.barcode-btn{
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+}
+
+.nav-btn{
+    background:rgba(40,40,40,.85);
+    color:#fff;
+}
+
+.barcode-btn{
+    background:#0266ff;
+    color:#fff;
+}
+
+.header-title{
+    flex:1;
+    text-align:center;
+    padding:0 12px;
+}
+
+.header-title h2{
+    color:#fff;
+    font-size:17px;
+    font-weight:700;
+    line-height:1.2;
+}
+
+.header-title p{
+    margin-top:4px;
+    color:#ededed;
+    font-size:13px;
+}
+/*==================================================
+EVENT CARD
+==================================================*/
+
+.event-card{
+    position:absolute;
+    left:18px;
+    right:18px;
+    top:165px;
+    background:#111;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 18px 40px rgba(0,0,0,.30);
+    z-index:50;
+}
+
+.card-main{
+    padding:24px;
+}
+
+.card-main h1{
+    color:#fff;
+    font-size:31px;
+    line-height:1.08;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+}
+
+.card-divider{
+    width:145px;
+    height:3px;
+    margin:18px 0;
+    background:#666;
+    border-radius:20px;
+}
+
+.card-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.venue{
+    color:#ddd;
+    font-size:17px;
+    font-weight:500;
+}
+
+.ticket-total{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#fff;
+    font-size:18px;
+}
+
+.ticket-total strong{
+    font-size:20px;
+    font-weight:700;
+}
+
+/*==================================================
+VIEW TICKETS BUTTON
+==================================================*/
+
+.view-btn{
+    width:100%;
+    height:62px;
+    border:none;
+    background:#0266ff;
+    color:#fff;
+    font-size:20px;
+    font-weight:700;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    transition:.25s;
+}
+
+.view-btn:hover{
+    background:#0057dd;
+}
+
+.view-btn:active{
+    transform:scale(.98);
+}
+
+/*==================================================
+ORDER SECTION
+==================================================*/
+
+.order-section{
+    position:absolute;
+    left:24px;
+    right:24px;
+    top:470px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#555;
+    font-size:15px;
+    font-weight:600;
+    z-index:40;
+}
+
+.order-section strong{
+    color:#444;
+}
+
+/*==================================================
+OVERLAY
+==================================================*/
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .3s ease,
+               visibility .3s ease;
+    z-index:800;
+}
+
+.overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+/*==================================================
+BOTTOM SHEET
+==================================================*/
+
+.sheet{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+
+    background:#fff;
+    border-radius:28px 28px 0 0;
+
+    transform:translateY(100%);
+    transition:transform .35s ease;
+
+    z-index:900;
+
+    min-height:510px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.sheet.show{
+    transform:translateY(0);
+}
+
+/*==================================================
+GRABBER
+==================================================*/
+
+.grabber{
+    width:52px;
+    height:5px;
+    background:#d2d2d2;
+    border-radius:20px;
+    margin:12px auto 16px;
+}
+
+/*==================================================
+HEADER
+==================================================*/
+
+.sheet-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 22px 18px;
+    border-bottom:1px solid #ececec;
+}
+
+.sheet-header h2{
+    font-size:18px;
+    font-weight:800;
+    color:#111;
+}
+
+.close-btn{
+    width:38px;
+    height:38px;
+    border:none;
+    border-radius:50%;
+    background:#f3f3f3;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    transition:.2s;
+}
+
+.close-btn:hover{
+    background:#e8e8e8;
+}
+
+/*==================================================
+TICKET SECTION
+==================================================*/
+
+.ticket-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 22px;
+    border-bottom:1px solid #ececec;
+}
+
+.ticket-section h3{
+    font-size:16px;
+    color:#111;
+    margin-bottom:6px;
+}
+
+.ticket-section p{
+    color:#777;
+    font-size:14px;
+}
+
+.ticket-section span{
+    font-size:15px;
+    font-weight:700;
+    color:#0266ff;
+}
+
+/*==================================================
+TICKET GRID
+==================================================*/
+
+.ticket-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    padding:24px 22px;
+}
+
+.ticket{
+    border:2px solid #d8d8d8;
+    border-radius:18px;
+    background:#fff;
+    cursor:pointer;
+    transition:.25s;
+    overflow:hidden;
+}
+
+.ticket:hover{
+    transform:translateY(-2px);
+}
+
+.ticket.selected{
+    border-color:#0266ff;
+}
+
+/*==================================================
+TICKET TOP
+==================================================*/
+
+.ticket-top{
+    padding:22px 12px;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    color:#111;
+}
+
+/*==================================================
+TICKET BOTTOM
+==================================================*/
+
+.ticket-bottom{
+    height:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f6f6f6;
+    border-top:1px solid #ececec;
+}
+
+.ticket.selected .ticket-bottom{
+    background:#0266ff;
+}
+
+.ticket-bottom i{
+    font-size:22px;
+    color:#9b9b9b;
+}
+
+.ticket.selected .ticket-bottom i{
+    color:#fff;
+}
+/*==================================================
+SHEET FOOTER
+==================================================*/
+
+.sheet-footer{
+    margin-top:auto;
+    padding:16px 20px 20px;
+    border-top:1px solid #ececec;
+    background:#fff;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.selected-info{
+    display:flex;
+    align-items:center;
+    gap:5px;
+
+    color:#666;
+    font-size:13px;
+    font-weight:500;
+}
+
+.selected-info span{
+    color:#0266ff;
+    font-size:17px;
+    font-weight:700;
+    line-height:1;
+}
+
+/*==================================================
+TRANSFER BUTTON
+==================================================*/
+
+#transferBtn{
+    border:none;
+    border-radius:22px;
+
+    background:#0266ff;
+    color:#fff;
+
+    height:44px;
+    padding:0 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.2px;
+
+    cursor:pointer;
+    transition:.25s;
+}
+
+#transferBtn:hover{
+    background:#0057dd;
+}
+
+#transferBtn:active{
+    transform:scale(.97);
+}
+
+#transferBtn i{
+    font-size:13px;
+}
+
+/*==================================================
+HOME INDICATOR
+==================================================*/
+
+.screen::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:8px;
+    transform:translateX(-50%);
+    width:128px;
+    height:5px;
+    border-radius:10px;
+    background:#000;
+    opacity:.18;
+}
+
+/*==================================================
+ANIMATIONS
+==================================================*/
+
+.event-card{
+    animation:cardFade .4s ease;
+}
+
+.sheet.show{
+    animation:sheetUp .3s ease;
+}
+
+@keyframes cardFade{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes sheetUp{
+
+    from{
+        transform:translateY(100%);
+    }
+
+    to{
+        transform:translateY(0);
+    }
+
+}
+
+/*==================================================
+BUTTONS
+==================================================*/
+
+button{
+    outline:none;
+}
+
+button:focus-visible{
+    outline:2px solid rgba(2,102,255,.3);
+}
+
+/*==================================================
+TEXT SELECTION
+==================================================*/
+
+::selection{
+    background:#0266ff;
+    color:#fff;
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media (max-width:420px){
+
+    .iphone{
+        width:100vw;
+        height:100vh;
+        border-radius:0;
+        padding:0;
+    }
+
+    .iphone::before{
+        display:none;
+    }
+
+    .screen{
+        border-radius:0;
+    }
+
+}

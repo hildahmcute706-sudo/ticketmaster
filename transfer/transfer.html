@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Transfer Tickets</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet"
+href="../css/transfer.css">
+
+</head>
+
+<body>
+
+<div class="iphone">
+
+<div class="screen">
+
+<!-- STATUS BAR -->
+
+<div class="status-bar">
+
+<div class="time">
+9:41
+</div>
+
+<div class="status-icons">
+
+<i class="fa-solid fa-signal"></i>
+
+<i class="fa-solid fa-wifi"></i>
+
+<i class="fa-solid fa-battery-full"></i>
+
+</div>
+
+</div>
+
+<!-- HEADER -->
+
+<header class="transfer-header">
+
+<button
+class="back-btn"
+onclick="window.location.href='../index.html'">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</button>
+
+<h1>
+
+TRANSFER TICKETS
+
+</h1>
+
+<div class="header-space"></div>
+
+</header>
+
+<hr class="header-line">
+
+<!-- CONTENT -->
+
+<div class="transfer-body">
+
+<div class="ticket-summary">
+
+<h2>
+
+2 Tickets Selected
+
+</h2>
+
+<p>
+
+Sec <strong>207</strong>
+Row <strong>6</strong>
+Seat <strong>1, 2</strong>
+
+</p>
+
+</div>
+<!-- ===================================
+TRANSFER FORM
+=================================== -->
+
+<form id="transferForm" class="transfer-form">
+
+    <!-- FIRST NAME -->
+
+    <div class="form-group">
+
+        <label for="firstName">
+
+            First Name
+
+        </label>
+
+        <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Enter first name"
+            autocomplete="given-name">
+
+    </div>
+
+    <!-- LAST NAME -->
+
+    <div class="form-group">
+
+        <label for="lastName">
+
+            Last Name
+
+        </label>
+
+        <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Enter last name"
+            autocomplete="family-name">
+
+    </div>
+
+    <!-- EMAIL OR MOBILE -->
+
+    <div class="form-group">
+
+        <label for="recipient">
+
+            Email or Mobile Number
+
+        </label>
+
+        <input
+            type="text"
+            id="recipient"
+            name="recipient"
+            placeholder="Enter email or mobile number"
+            autocomplete="email">
+
+    </div>
+
+    <!-- NOTE -->
+
+    <div class="form-group">
+
+        <label for="note">
+
+            Note <span>(Optional)</span>
+
+        </label>
+
+        <textarea
+            id="note"
+            name="note"
+            rows="5"
+            placeholder="Add a message..."></textarea>
+
+    </div>
+
+</form>
+<!-- ===================================
+BOTTOM ACTION BAR
+=================================== -->
+
+</div>
+<!-- End .transfer-body -->
+
+<div class="transfer-footer">
+
+    <button
+        id="transferBtn"
+        class="transfer-btn"
+        type="submit"
+        form="transferForm">
+
+        TRANSFER TICKETS
+
+    </button>
+
+</div>
+
+</div>
+<!-- End .screen -->
+
+</div>
+<!-- End .iphone -->
+
+<script src="../js/transfer.js"></script>
+
+</body>
+</html>
